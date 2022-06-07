@@ -1,8 +1,13 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color: rgb(201, 164, 236);
+    background-color: rgb(255, 255, 255);
+    max-width: 75ch;
 }
-
+html{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
 h1 {
     margin: 5px;
     color: rgb(30, 30, 30);
@@ -12,6 +17,8 @@ span {
     font-size: small;
     color: rgb(113, 113, 113);
     font-style: italic;
+    width: 100%;
+    text-align: center;
 }
 
 #container {
@@ -22,17 +29,16 @@ span {
     align-items: center;
 }
 
-#botones {}
-
 button {
     background-color: transparent;
     border: none;
     cursor: pointer;
-    text-decoration: underline;
+    text-decoration: none;
+    transition: text-decoration .3s ease-in-out;
 }
 
 button:hover {
-    font-weight: 600;
+    text-decoration: underline;
 }
 
 select {
@@ -41,13 +47,12 @@ select {
 }
 .res{
     text-align: center;
+    font-weight: bold;
 }
-
-
 
 .link{
     position: absolute;
-    bottom: 1em;
+    bottom: 2em;
     right: 1em;
     left: 1em;
     
@@ -64,11 +69,86 @@ select {
 }
 .link a{
     text-decoration: none;
-    color: rgb(201, 164, 236);
-    background-color: aliceblue;
+    color: rgb(255, 255, 255);
+    background-color: rgb(192, 192, 192);
     padding: 2px 3px;
     margin: 3px 0;
     border-radius: 5px;
     width: max-content;
     font-size: small;
+}
+
+footer{
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
+    left: 0em;
+    
+    display: flex;
+    flex-flow: column;
+    
+}
+
+footer span{
+    margin: 0;
+    padding: 0;
+    font-size: small;
+    color: rgb(113, 113, 113);
+    width: auto;
+}
+footer a{
+    text-decoration: none;
+    color: inherit;    
+    padding: 2px 3px;
+    margin: 3px 0;
+    width: max-content;
+    font-size: small;
+}
+footer a:hover{
+    border-bottom: .2px solid rgb(105, 105, 105);
+    
+}
+
+/* Estilos 2players */
+#titulo2p{
+    text-align: center;
+    font-size: x-large;
+    color: rgb(30, 30, 30);
+}
+#instrucciones2p{
+    margin: 28px;
+}
+table{
+    border-collapse: collapse;
+    max-width: 320px;
+    min-width: 280px;
+    text-align: center;
+    margin: 2em auto;
+}
+th{
+    background-color: rgba(162, 162, 162, 0.247);
+    color: rgb(21, 21, 21);
+    padding: 5px;
+    font-weight: 500;
+    font-size: small;
+}
+tr{
+    border-bottom: thin solid rgba(128, 128, 128, 0.256);
+}
+.contenedor-resultados{
+    margin-top: 55px;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+.contenedor-again{
+    margin-top: 15px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    font-weight: 700;
 }

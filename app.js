@@ -4,10 +4,13 @@ const piedra = $("#piedra")
 const papel = $("#papel")
 const tijera = $("#tijera")
 
-const form = $('form')
-
 const elementos = ['piedra', 'papel', 'tijera']
 const res = $('.res')
+const keys = {
+  'A': 'piedra',
+  'S': 'papel',
+  'D': 'tijera'
+}
 
 let pc
 const aleatorio = 
@@ -51,8 +54,18 @@ function jugar(arma){
   }
 }
 
-form.addEventListener('submit', e => {
-    e.preventDefault()
-    const arma = e.target.elements.armas.value
-    jugar(arma)
+document.addEventListener('keyup', (e) => {
+  let tecla = e.key.toUpperCase()
+  if (tecla in keys) {
+      arma = keys[tecla]
+      jugar(arma)
+      document.querySelector('#again').style.display = 'block'
+  }
+
 })
+
+const reload = () => {
+  res.innerText = ''
+
+  document.querySelector('#again').style.display = 'none'
+}

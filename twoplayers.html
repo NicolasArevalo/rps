@@ -12,122 +12,71 @@
 <body>
 
     <main>
-        <h1>Piedra, papel o tijera pa 2!</h1>
-        <span>Obvio es el más cool que hay</span>
+        <h1 id="titulo2p">Piedra, papel o tijera pa 2!</h1>
+                
+        <p id="instrucciones2p"><strong>Instrucciones</strong> <br>
+            Jugador uno elige una de las 3 opciones (por favor presiona la tecla sin que el otro compa se entere 😉),
 
-        <p>👦🏽Jugador 1: teclas A S D</p>
-        <p>👨🏼‍🦰Jugador 2: teclas J K L</p>
-
-        <P>
-            A y J para piedra <br>
-            S y K para papel <br>
-            D y L para tijera <br>
-        </P>
-
-        <p>Instrucciones: <br>
-            Jugador uno elige una de las 3 oj2iones (por favor presiona la tecla sin que el otro compa se entere 😉),
-
-            Luego jugador dos elige.
+            luego jugador dos elige.
             There you go!
         </p>
 
-        <div id="resj1">
-            🏁 Jugador 1, elige. 🟠
-        </div>
-        <div id="resj2">
-            🏁 Jugador 2, elige. 🟠
-        </div>
-        <div id="res">
+        <table>
+            <tr>
+                <th>Teclas <br>
+                    jugador 1👦🏽
+                </th>
+                <th>Teclas <br>
+                    jugador 2👨🏼‍🦰
+                </th>
+                <th>Herramienta</th>
+            </tr>
+            <tr>
+                <td>A</td>
+                <td>J</td>
+                <td>Piedra✊🏼</td>
+            </tr>
+            <tr>
+                <td>S</td>
+                <td>K</td>
+                <td>Papel✋🏼</td>
+            </tr>
+            <tr>
+                <td>D</td>
+                <td>L</td>
+                <td>Tijera✌🏼</td>
+            </tr>
+        </table>
 
+        <div class="contenedor-resultados">
+            <div id="resj1">
+                🏁 Jugador 1, elige. 🟠
+            </div>
+            <div id="resj2">
+                🏁 Jugador 2, elige. 🟠
+            </div>
+            
         </div>
-        <div id="again" style="display: none;">
-            <button onclick="reload()">Jugar de nuevo</button>
+        <div class="contenedor-again">
+            <div id="res">
+    
+            </div>
+            <div id="again" style="display: none;">
+                <button onclick="reload()">Jugar de nuevo 🔃</button>
+            </div>
         </div>
 
     </main>
+    <div class="link">
+        <p>Solitario? juega la versión de</p>
+        <a href="index.html">un jugador</a>
+    </div>
 
-    <script>
-        const res1 = document.querySelector('#resj1')
-        const res2 = document.querySelector('#resj2')
-        const keys = {
-            'A': 'piedra',
-            'S': 'papel',
-            'D': 'tijera'
-        }
-        const keys2 = {
-            'J': 'piedra',
-            'K': 'papel',
-            'L': 'tijera'
-        }
-        let j1
-        let j2
-
-        const pelea = (j1, j2) => {
-            if (j1 == 'piedra') {
-                if (j2 == 'papel') {
-                    res.innerText = `JUGADOR 2 GANA`
-                }
-                if (j2 == 'piedra') {
-                    res.innerText = `EMPATE`
-                }
-                if (j2 == 'tijera') {
-                    res.innerText = `JUGADOR 1 GANA`
-                }
-            }
-            if (j1 == 'papel') {
-                if (j2 == 'papel') {
-                    res.innerText = `EMPATE`
-                }
-                if (j2 == 'piedra') {
-                    res.innerText = `JUGADOR 1 GANA`
-                }
-                if (j2 == 'tijera') {
-                    res.innerText = `JUGADOR 2 GANA`
-                }
-            }
-            if (j1 == 'tijera') {
-                if (j2 == 'papel') {
-                    res.innerText = `JUGADOR 1 GANA`
-                }
-                if (j2 == 'piedra') {
-                    res.innerText = `JUGADOR 2 GANA`
-                }
-                if (j2 == 'tijera') {
-                    res.innerText = `EMPATE`
-                }
-            }
-            console.log('SI PASO MANO')
-        }
-
-        const reload = () => {
-            j1 = undefined
-            j2 = undefined
-
-            res.innerText = ''
-            res1.innerText = '🏁 Jugador 1, elige. 🟠'
-            res2.innerText = '🏁 Jugador 2, elige. 🟠'
-            document.querySelector('#again').style.display = 'none'
-        }
-
-        document.addEventListener('keyup', (e) => {
-            let tecla = e.key.toUpperCase()
-            if (tecla in keys) {
-                j1 = keys[tecla]
-                res1.innerText = `🏁 Jugador 1, ready pa 💚`
-
-            }
-            if (tecla in keys2) {
-                j2 = keys2[tecla]
-                res2.innerText = `🏁 Jugador 2, ready pa 💚`
-            }
-            console.log(j1, j2)
-            console.log(Boolean(j1) && Boolean(j2))
-            if (j1 && j2) {
-                pelea(j1, j2)
-                document.querySelector('#again').style.display = 'block'
-            }
-        })
-    </script>
+    <footer>
+        <span>Hecho por el <a href="https://nicolasarevalo.tk">duro</a></span>
+    </footer>
+    
+    <script src="two.js"></script>
 
 </body>
 

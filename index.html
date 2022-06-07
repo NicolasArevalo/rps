@@ -14,24 +14,44 @@
     <div id="container">
         <h1>Piedra, papel o tijera</h1>
         <span>Obvio es el más cool que hay</span>
-
-        Elige tu arma
-
-        <form>
-            <select name="armas" id="armas">
-                <option value="piedra">✊🏽</option>
-                <option value="papel">✋🏽</option>
-                <option value="tijera">✌🏽</option>
-            </select>
-            <button>Jugar!</button>
-        </form>
-
-        <p class="res"></p>
+        <table>
+            <tr>
+                <th>Teclas                    
+                </th>
+                
+                <th>Herramienta</th>
+            </tr>
+            <tr>
+                <td>A</td>
+                
+                <td>Piedra✊🏼</td>
+            </tr>
+            <tr>
+                <td>S</td>
+                
+                <td>Papel✋🏼</td>
+            </tr>
+            <tr>
+                <td>D</td>
+                
+                <td>Tijera✌🏼</td>
+            </tr>
+        </table>
+         <p>Elije tu arma para comenzar ⚔️ <br> (presiona la tecla correspondiente) </p>
+        <div class="res"></div>
+        <div id="again" style="display: none;">
+            <button onclick="reload()">Jugar de nuevo 🔃</button>
+        </div>
     </div>
     <div class="link">
         <p>Tienes alguien más? juega la versión de</p>
         <a href="twoplayers.html">dos jugadores</a>
     </div>
+    
+    <footer>
+        <span>Hecho por el <a href="https://nicolasarevalo.tk">duro</a></span>
+    </footer>
+
     <script src="app.js"></script>
 </body>
 
