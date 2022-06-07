@@ -75,6 +75,8 @@ document.addEventListener('keyup', (e) => {
     console.log(Boolean(j1) && Boolean(j2))
     if (j1 && j2) {
         pelea(j1, j2)
+        res1.innerText = `J1 sacó: ${j1}😲`
+        res2.innerText = `J2 sacó ${j2}😲`
         document.querySelector('#again').style.display = 'block'
     }
 })
